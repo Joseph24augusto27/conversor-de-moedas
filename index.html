@@ -26,13 +26,14 @@
 
         <label> converter <b>para</b>
             <select class="currency-select">
-                <option value="dolar">US$ dollar</option>
+                <option value="dolar">US$ dolar</option>
                 <option value="euro">€ euro</option>
+                <option value="bitcoin">₿ bitcoin</option>
             </select>
         </label>
 
         <label> valor
-            <input class="input-currency" placeholder="10.000,00">
+            <input class="input-currency" placeholder="digite o valor">
         </label>
 
         <button class="convert-button">converter</button>
@@ -47,10 +48,12 @@
             <img src="./assets/Vector.png" alt="seta-roxa" class="vector-img">
 
             <div class="currency-box">
-                <img src="./assets/dollar$.png" alt="img-dollar">
-                <p class="currency">dollar</p>
+                <img  class="currency-img"src="./assets/dollar$.png" alt="img-dollar">
+                <p class="currency" id="currency-name">dolar americano</p>
                 <p class="currency-value-converted">US$ 0,00</p>
             </div>
+
+         
         
         </section>
     </main>
