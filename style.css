@@ -9,41 +9,42 @@
 }
 
 body {
-    background: #772fd1;
+    background: white;
 }
 
 .logo-img {
-    width: 300px;
+    width: 200px;
     display: block;
-    margin: 20px auto
+    margin: 20px auto;
 }
 
 
 main {
     width: 375px;
-    background: #F4F4F4;
-    border-radius: 20px;
+    background: whitesmoke;
+    border-radius: 40px;
     margin: 0px auto;
     padding: 44px 24px 23px;
-    border: 10px solid rgb(98, 238, 112);
+    border: 10px solid rgb(19, 19, 19);
+
 }
 
 label {
-    color: #777777;
+    color: black;
     font-size: 14px;
     font-weight: 700px;
 }
 
 select, input{
 
-    border-radius: 4px;
-    background: #FFFFFF;
-    border: 1px #bbbbbb;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid black;
     height: 50px;
     width: 100%;
     margin-bottom: 25px;
     appearance: none;
-    padding: 18px;
+    padding: 16px;
     font-weight: 700px;
     font-size: 16px;
     color: #555555;
@@ -51,26 +52,40 @@ select, input{
 }
 
 button{
-    background: #772FD3;
-    border-radius: 5px;
+    background: black;
+    border-radius: 15px;
     width: 100%;
     border: none;
     height: 48px;
-    color: #FFFFFF;
+    color: whitesmoke;
     font-size: 18px;
     font-weight: 700px;
     cursor: pointer;
 }
 
-.img-real{
-    width: 44px;
-    height: 44px;
+.clear-all{
+    background: black;
+    border-radius: 15px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 700px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.img-dollar{
-    width: 14px;
-    height: 14px;
+.img-real{
+    width: 78px;
+    height: 55px;
 }
+
+.currency-img{
+    width: 55px;
+    height: 55px;
+}
+
 button:hover{
     opacity: 0.8;
 
@@ -81,17 +96,19 @@ button:active{
 }
 
 section{
-    border:1px solid #772FD3;
+    border:1px solid black;
     border-radius: 20px;
     margin-top: 36px;
     padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: whitesmoke;
 }
 
 .vector-img{
-    margin:15px 0px;
+    width: 35px;
+    height: 50px;
 }
 
 
@@ -103,7 +120,7 @@ section{
 }
 
 .currency{
-    color: #777777;
+    color: black;
     font-size: 14px;
 }
 
@@ -111,16 +128,20 @@ section{
     color: #555555;
     font-weight: 700px;
     font-size: 20px;
+    line-height: 5px;
 }
 
+
+
 input:hover{
-    background-color:rgb(98, 238, 112);
+    background-color: rgb(187, 187, 187);
 }
 
 input:active{
     opacity: 0.5;
 }
 select:hover{
-    background-color: rgb(98, 238, 112)
+    background-color: rgb(187, 187, 187);
 }
+
 
