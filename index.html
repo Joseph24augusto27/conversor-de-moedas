@@ -14,18 +14,22 @@
 </head>
 
 <body>
-    <img src="./assets/logo.gif" alt="logo-dev-club" class="logo-img">
+    <img src="./assets/logo-coverter.jpeg" alt="logo-dev-club" class="logo-img">
 
     <main>
         <label> converter <b>de</b>
-            <select>
-                <option>R$ real Brasileiro</option>
+            <select class="currency-select-first">
+                <option value="real">R$ real Brasileiro</option>
+                <option value="dolar">US$ dolar</option>
+                <option value="euro">€ euro</option>
+                <option value="bitcoin">₿ bitcoin</option>
             </select>
         </label>
 
 
         <label> converter <b>para</b>
             <select class="currency-select">
+                <option value="real">R$ real Brasileiro</option>
                 <option value="dolar">US$ dolar</option>
                 <option value="euro">€ euro</option>
                 <option value="bitcoin">₿ bitcoin</option>
@@ -37,24 +41,26 @@
         </label>
 
         <button class="convert-button">converter</button>
+        <button class="clear-all">limpar</button>
 
         <section>
             <div class="currency-box">
-                <img src="./assets/brasil 2.png" alt="img-real">
-                <p class="currency">real</p>
+                <img class="img-real" src="./assets/real-logo.jpeg" alt="img-real">
+                <p class="currency-real">real</p>
                 <p class="currency-value-to-convert">R$ 0,00</p>
             </div>
 
-            <img src="./assets/Vector.png" alt="seta-roxa" class="vector-img">
+            <img src="./assets/ícone De Seta Em Estilo Simples Símbolo De Seta Web Design PNG , Seta Clipart, Ícone De Seta, Ícone Da Web Imagem PNG e Vetor Para Download Gratuito.jpeg"
+                alt="seta-roxa" class="vector-img">
 
             <div class="currency-box">
-                <img  class="currency-img"src="./assets/dollar$.png" alt="img-dollar">
+                <img class="currency-img" src="assets/dollar-logo.jpeg" alt="img-dollar">
                 <p class="currency" id="currency-name">dolar americano</p>
                 <p class="currency-value-converted">US$ 0,00</p>
             </div>
 
-         
-        
+
+
         </section>
     </main>
 
