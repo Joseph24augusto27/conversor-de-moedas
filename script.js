@@ -12,7 +12,7 @@ function convertValues (){
     const realToday = 1.00
     const dolarToday = 6.15
     const euroToday = 6.41
-    const bitcoinToday = 592.605 
+    const bitcoinToday = 592.60
     
 
     if(currencySelect.value == "real") {
