@@ -1,6 +1,6 @@
 <h1>🪙 Conversor De Moedas 🪙</h1>
 <br>
-<h2>Projeto foi elaborado pela instituição <a href="https://rodolfomori.com.br/devclub/">Devclub</a>, com a mentoria de Rodolfo Mori!</h2>
+<h2>Projeto responsivo que foi elaborado pela instituição <a href="https://rodolfomori.com.br/devclub/">Devclub</a>, com a mentoria de Rodolfo Mori!</h2>
 <br>
 <p>O objetivo do projeto é realizar a conversão de 3 moedas, real, dolar e bitcoin!</p>
 <br>
