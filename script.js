@@ -1,6 +1,13 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelectFirst = document.querySelector(".currency-select-first")
 const currencySelect = document.querySelector(".currency-select")
+const clearAll = document.querySelector(".clear-all")
+
+
+
+
+console.log()
+
 
 function convertValues (){
     const inputCurrencyValue = document.querySelector(".input-currency").value
@@ -52,41 +59,6 @@ function convertValues (){
 
 
 
-
-            if(currencySelectFirst.value == "real") {
-
-                currencyValueToConverted.innerHTML = new Intl.NumberFormat ("pt-BR", {
-                    style: "currency",
-                    currency:"BRL"
-                  } ).format (inputCurrencyValue / dolarToday)
-            }
-        
-            if(currencySelectFirst.value == "dolar") {
-        
-                currencyValueToConverted.innerHTML = new Intl.NumberFormat ("en-US", {
-                    style: "currency",
-                    currency:"USD"
-                  } ).format (inputCurrencyValue / dolarToday)
-            }
-        
-            if(currencySelectFirst.value == "euro") 
-        
-            {currencyValueToConverted.innerHTML = new Intl.NumberFormat ("de-DE", {
-                style: "currency",
-                currency: "EUR"
-                } ).format(inputCurrencyValue/euroToday)}
-        
-            if(currencySelectFirst.value == "bitcoin") {
-        
-                currencyValueToConverted.innerHTML = new Intl.NumberFormat("de-DE", {
-                        style: "currency",
-                        currency: "BTC",
-                        minimumFractionDigits: 8
-                        } ).format(inputCurrencyValue/bitcoinToday)
-                    }
-        
-    i
-
 }
 
 function changeCurency (){
@@ -123,36 +95,25 @@ if ( currencySelect.value == "bitcoin")
 
     
 
-    
-if ( currencySelectFirst.value == "real") {
-        currencyReal.innerHTML = "real"
-        imgReal.src = "./assets/brasil 2.png"
-    }
-
-if ( currencySelectFirst.value == "dolar") 
-    {
-    currencyReal.innerHTML = "dolar"
-    imgReal.src = "./assets/dollar$.png"
-}
-
-if ( currencySelectFirst.value == "euro") 
-    {
-    currencyReal.innerHTML = "Euro"
-    imgReal.src ="./assets/euro.png"
-}
-
-if ( currencySelectFirst.value == "bitcoin") 
-    {
-    currencyReal.innerHTML = "bitcoin"
-    imgReal.src ="./assets/bitcoin 1.png"
-}
-
-
 
     convertValues ()
+}
+
+
+function cleanCurrency() {
+    
+
+    
+
+
+
+
+
+
 }
 
 
 currencySelect.addEventListener("change", changeCurency)
 convertButton.addEventListener("click", convertValues )
 currencySelectFirst.addEventListener("change", changeCurency)
+clearAll.addEventListener("click", cleanCurrency)
