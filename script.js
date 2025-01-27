@@ -1,7 +1,8 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelectFirst = document.querySelector(".currency-select-first")
 const currencySelect = document.querySelector(".currency-select")
-const clearAll = document.querySelector(".clear-all")
+
+
 
 
 
@@ -100,20 +101,9 @@ if ( currencySelect.value == "bitcoin")
 }
 
 
-function cleanCurrency() {
-    
-
-    
-
-
-
-
-
-
-}
 
 
 currencySelect.addEventListener("change", changeCurency)
 convertButton.addEventListener("click", convertValues )
 currencySelectFirst.addEventListener("change", changeCurency)
-clearAll.addEventListener("click", cleanCurrency)
+
