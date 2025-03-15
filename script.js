@@ -9,7 +9,7 @@ const currencyName = document.getElementById("currency-name");
 
 const exchangeRates = {
     real: 1.00,
-    dolar: 5.15,
+    dolar: 5.74,
     euro: 6.41,
     bitcoin: 592.60
 };
@@ -63,6 +63,29 @@ function changeCurrency() {
     convertValues();
 }
 
+function changeOriginCurrency() {
+    const currencyData = {
+        real: { name: "Real Brasileiro", img: "./assets/brasil 2.png" },
+        dolar: { name: "Dólar Americano", img: "./assets/dollar$.png" },
+        euro: { name: "Euro", img: "./assets/euro.png" },
+        bitcoin: { name: "Bitcoin", img: "./assets/bitcoin 1.png" }
+    };
+
+    const selectedCurrency = currencySelectFirst.value;
+    
+    if (currencyData[selectedCurrency]) {
+        currencyValueToConvert.innerHTML = currencyData[selectedCurrency].name;
+        document.querySelector(".img-real").src = currencyData[selectedCurrency].img;
+    }
+    
+    convertValues();
+}
+
+// Chama a função para converter valores ao clicar no botão
 convertButton.addEventListener("click", convertValues);
+
+// Chama a função para mudar a moeda e recalcular a conversão
 currencySelect.addEventListener("change", changeCurrency);
-currencySelectFirst.addEventListener("change", convertValues);
+currencySelectFirst.addEventListener("change", changeOriginCurrency);
+
+
