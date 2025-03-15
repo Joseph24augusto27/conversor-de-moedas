@@ -1,148 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'robot' sans-serif;
+    font-family: 'Roboto', sans-serif;
     outline: none;
 }
 
 body {
-    background: white;
+    
+    background: #065f5f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;;
+}
+
+.div-mother{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    top: 100px;
+    background: #065f5f;
+    ;
 }
 
 .logo-img {
-    width: 200px;
-    display: block;
-    margin: 20px auto;
+    width: 150px;
+    margin-bottom: 20px;
 }
 
-
 main {
-    width: 375px;
-    background: whitesmoke;
-    border-radius: 40px;
-    margin: 0px auto;
-    padding: 44px 24px 23px;
-    border: 10px solid rgb(19, 19, 19);
-
+    width: 100%;
+    max-width: 400px;
+    background: #e52121;
+    border-radius: 20px;
+    padding: 30px;
+    border: 5px solid #131313;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 label {
     color: black;
     font-size: 14px;
-    font-weight: 700px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
-select, input{
-
+select, input {
+    width: 100%;
     border-radius: 10px;
     background: white;
     border: 1px solid black;
-    height: 50px;
-    width: 100%;
-    margin-bottom: 25px;
-    appearance: none;
-    padding: 16px;
-    font-weight: 700px;
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 10px;
     font-size: 16px;
-    color: #555555;
     cursor: pointer;
 }
 
-button{
+button {
     background: black;
-    border-radius: 15px;
+    border-radius: 10px;
     width: 100%;
     border: none;
-    height: 48px;
-    color: whitesmoke;
+    height: 45px;
+    color: white;
     font-size: 18px;
-    font-weight: 700px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.clear-all{
-    background: black;
-    border-radius: 15px;
-    width: 100%;
-    height: 48px;
-    border: none;
-    color: whitesmoke;
-    font-size: 18px;
-    font-weight: 700px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.img-real{
-    width: 85px;
-    height: 70px;
-}
-
-.currency-img{
-    width: 55px;
-    height: 55px;
-}
-
-button:hover{
+button:hover {
     opacity: 0.8;
-
 }
 
-button:active{
+button:active {
     opacity: 0.6;
 }
 
-section{
-    border:1px solid black;
-    border-radius: 20px;
-    margin-top: 36px;
-    padding: 12px;
+.result {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: whitesmoke;
 }
 
-.vector-img{
-    width: 35px;
-    height: 50px;
-    margin: 10px 10px;
+.vector-img {
+    width: 30px;
+    margin: 10px 0;
 }
 
-
-.currency-box{
+.currency-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
 }
 
-.currency{
+.currency {
     color: black;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.currency-value, currency-value-to-convert {
-    color: #555555;
-    font-weight: 700px;
-    font-size: 20px;
-    line-height: 5px;
+.currency-value-to-convert, .currency-value-converted {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
 }
-
-
-
-input:hover{
-    background-color: rgb(187, 187, 187);
-}
-
-input:active{
-    opacity: 0.5;
-}
-select:hover{
-    background-color: rgb(187, 187, 187);
-}
-
-

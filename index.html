@@ -4,70 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor</title>
+    <title>Conversor de Moedas</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <img src="./assets/logo-Photoroom.png" alt="logo-dev-club" class="logo-img">
+    <div class="div-mother">
+    <img src="./assets/logo-Photoroom.png" alt="logo-conversor" class="logo-img">
 
     <main>
-        <label> converter <b>de</b>
+        <label>Converter <b>de</b>
             <select class="currency-select-first">
-                <option value="real">R$ real Brasileiro</option>
+                <option value="real">R$ Real Brasileiro</option>
+                <option value="dolar">US$ Dólar Americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="bitcoin">₿ Bitcoin</option>
             </select>
         </label>
 
-
-        <label> converter <b>para</b>
+        <label>Converter <b>para</b>
             <select class="currency-select">
-                <option value="dolar">US$ dolar</option>
-                <option value="euro">€ euro</option>
-                <option value="bitcoin">₿ bitcoin</option>
+                <option value="dolar">US$ Dólar Americano</option>
+                <option value="euro">€ Euro</option>
+                <option value="bitcoin">₿ Bitcoin</option>
+                <option value="real">R$ Real Brasileiro</option>
             </select>
         </label>
 
-        <label> valor
-            <input class="input-currency" placeholder="digite o valor">
+        <label>Valor
+            <input type="number" class="input-currency" placeholder="Digite o valor">
         </label>
 
-        <button class="convert-button">converter</button>
+        <button class="convert-button">Converter</button>
 
-        <section>
+        <section class="result">
             <div class="currency-box">
                 <img class="img-real" src="./assets/brasil 2.png" alt="img-real">
-                <p class="currency-real">real</p>
+                <p class="currency">Moeda de origem:</p>
                 <p class="currency-value-to-convert">R$ 0,00</p>
             </div>
 
-            <img src="./assets/ícone de vetor de seta para baixo-Photoroom.png"
-                alt="seta-roxa" class="vector-img">
+            <img src="./assets/ícone de vetor de seta para baixo-Photoroom.png" alt="seta" class="vector-img">
 
             <div class="currency-box">
-                <img class="currency-img" src="assets/dollar$.png" alt="img-dollar">
-                <p class="currency" id="currency-name">dolar americano</p>
+                <img class="currency-img" src="./assets/dollar$.png" alt="img-destino">
+                <p class="currency" id="currency-name">Dólar Americano</p>
                 <p class="currency-value-converted">US$ 0,00</p>
             </div>
-
-
-
         </section>
     </main>
-
-
-
-
-
-
-
+</div>
+    <script src="./script.js"></script>
 </body>
-
-
-<script src="./script.js"></script>
 
 </html>
