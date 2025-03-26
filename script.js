@@ -8,14 +8,14 @@ const currencyImage = document.querySelector(".currency-img");
 const currencyName = document.getElementById("currency-name");
 
 const exchangeRates = {
-    real: 1.00,
-    dolar: 5.74,
-    euro: 6.41,
-    bitcoin: 592.60
+    real: 0.20,     // 1 Real = 0.20 Dólar (inverso de 4.95)
+    dolar: 1.00,    // 1 Dólar = 1.00 Dólar
+    euro: 1.09,     // Exemplo de taxa para o Euro (ajuste conforme necessário)
+    bitcoin: 0.000017 // Exemplo de taxa para Bitcoin (ajuste conforme necessário)
 };
 
 function convertValues() {
-    const inputValue = parseFloat(inputCurrency.value);
+    const inputValue = parseFloat(inputCurrency.value.replace(',', '.'));
     
     if (isNaN(inputValue) || inputValue <= 0) {
         alert("Por favor, insira um valor válido para conversão.");
@@ -34,15 +34,25 @@ function convertValues() {
     
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
-        currency: fromCurrency === "real" ? "BRL" : fromCurrency === "dolar" ? "USD" : fromCurrency === "euro" ? "EUR" : "BTC",
+        currency: getCurrencyCode(fromCurrency),
         minimumFractionDigits: fromCurrency === "bitcoin" ? 8 : 2
     }).format(inputValue);
     
-    currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
+    currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
-        currency: toCurrency === "real" ? "BRL" : toCurrency === "dolar" ? "USD" : toCurrency === "euro" ? "EUR" : "BTC",
+        currency: getCurrencyCode(toCurrency),
         minimumFractionDigits: toCurrency === "bitcoin" ? 8 : 2
     }).format(convertedValue);
+}
+
+function getCurrencyCode(currency) {
+    const currencyCodes = {
+        real: "BRL",
+        dolar: "USD",
+        euro: "EUR",
+        bitcoin: "BTC"
+    };
+    return currencyCodes[currency] || "BRL";
 }
 
 function changeCurrency() {
@@ -87,5 +97,3 @@ convertButton.addEventListener("click", convertValues);
 // Chama a função para mudar a moeda e recalcular a conversão
 currencySelect.addEventListener("change", changeCurrency);
 currencySelectFirst.addEventListener("change", changeOriginCurrency);
-
-
