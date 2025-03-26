@@ -94,6 +94,6 @@ function changeOriginCurrency() {
 // Chama a função para converter valores ao clicar no botão
 convertButton.addEventListener("click", convertValues);
 
-// Chama a função para mudar a moeda e recalcular a conversão
+// Chama a função para mudar a moeda e recalcular a conversão yes
 currencySelect.addEventListener("change", changeCurrency);
 currencySelectFirst.addEventListener("change", changeOriginCurrency);
