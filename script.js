@@ -8,10 +8,10 @@ const currencyImage = document.querySelector(".currency-img");
 const currencyName = document.getElementById("currency-name");
 
 const exchangeRates = {
-    real: 0.20,     // 1 Real = 0.20 Dólar (inverso de 4.95)
-    dolar: 1.00,    // 1 Dólar = 1.00 Dólar
-    euro: 1.09,     // Exemplo de taxa para o Euro (ajuste conforme necessário)
-    bitcoin: 0.000017 // Exemplo de taxa para Bitcoin (ajuste conforme necessário)
+    real: 1.00,     // 1 Real como base
+    dolar: 4.95,    // 1 Dólar = 4.95 Reais
+    euro: 5.38,     // 1 Euro = 5.38 Reais 
+    bitcoin: 313000 // 1 Bitcoin = 313.000 Reais
 };
 
 function convertValues() {
@@ -30,7 +30,7 @@ function convertValues() {
         return;
     }
     
-    const convertedValue = (inputValue / exchangeRates[fromCurrency]) * exchangeRates[toCurrency];
+    const convertedValue = (inputValue * exchangeRates[fromCurrency]) / exchangeRates[toCurrency];
     
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
@@ -94,6 +94,6 @@ function changeOriginCurrency() {
 // Chama a função para converter valores ao clicar no botão
 convertButton.addEventListener("click", convertValues);
 
-// Chama a função para mudar a moeda e recalcular a conversão yes
+// Chama a função para mudar a moeda e recalcular a conversão
 currencySelect.addEventListener("change", changeCurrency);
 currencySelectFirst.addEventListener("change", changeOriginCurrency);
