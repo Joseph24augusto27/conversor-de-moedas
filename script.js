@@ -7,53 +7,49 @@ const currencyValueConverted = document.querySelector(".currency-value-converted
 const currencyImage = document.querySelector(".currency-img");
 const currencyName = document.getElementById("currency-name");
 
-// Use um objeto para armazenar taxas de câmbio com precisão
-const exchangeRates = {
-    real: 1,        // Base 1 Real
-    dolar: 4.95,    // 1 Dólar = 4.95 Reais
-    euro: 5.38,     // 1 Euro = 5.38 Reais 
-    bitcoin: 313000 // 1 Bitcoin = 313.000 Reais
-};
+// Função para obter as taxas de câmbio
+async function getExchangeRates() {
+    const response = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL");
+    const data = await response.json();
 
-function safeParseNumber(value) {
-    // Remove todos os caracteres exceto números, vírgula e ponto
-    const cleanValue = value.replace(/[^\d,\.]/g, '');
-    
-    // Substitui vírgula por ponto se existir
-    const normalizedValue = cleanValue.replace(',', '.');
-    
-    // Converte para número, garantindo um valor padrão de 0 se falhar
-    return parseFloat(normalizedValue) || 0;
+    return {
+        real: 1, // BRL como base
+        dolar: parseFloat(data.USDBRL.high),
+        euro: parseFloat(data.EURBRL.high),
+        bitcoin: parseFloat(data.BTCBRL.high)
+    };
 }
 
-function convertValues() {
-    // Use a função de parsing segura
-    const inputValue = safeParseNumber(inputCurrency.value);
-    
+// Função de conversão
+async function convertValues() {
+    const inputValue = parseFloat(inputCurrency.value) || 0;
+
     if (inputValue <= 0) {
         alert("Por favor, insira um valor válido para conversão.");
         return;
     }
-    
+
+    const exchangeRates = await getExchangeRates(); // Obtendo as taxas de câmbio
     const fromCurrency = currencySelectFirst.value;
     const toCurrency = currencySelect.value;
-    
+
     if (!exchangeRates[fromCurrency] || !exchangeRates[toCurrency]) {
         alert("Selecione moedas válidas para conversão.");
         return;
     }
-    
-    // Cálculo de conversão mais preciso
-    const convertedValue = (inputValue * exchangeRates[fromCurrency]) / exchangeRates[toCurrency];
-    
-    // Formatação consistente de moeda
+
+    // Conversão da moeda de origem para BRL e depois para a moeda de destino
+    const valueInBRL = inputValue * exchangeRates[fromCurrency];
+    let convertedValue = valueInBRL / exchangeRates[toCurrency]; // Corrigido o cálculo
+
+    // Atualiza os valores na tela
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: getCurrencyCode(fromCurrency),
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     }).format(inputValue);
-    
+
     currencyValueConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: getCurrencyCode(toCurrency),
@@ -62,6 +58,7 @@ function convertValues() {
     }).format(convertedValue);
 }
 
+// Retorna o código da moeda
 function getCurrencyCode(currency) {
     const currencyCodes = {
         real: "BRL",
@@ -72,6 +69,7 @@ function getCurrencyCode(currency) {
     return currencyCodes[currency] || "BRL";
 }
 
+// Função para alterar imagem e nome da moeda de destino
 function changeCurrency() {
     const currencyData = {
         real: { name: "Real Brasileiro", img: "./assets/brasil 2.png" },
@@ -81,15 +79,15 @@ function changeCurrency() {
     };
 
     const selectedCurrency = currencySelect.value;
-    
     if (currencyData[selectedCurrency]) {
         currencyName.innerHTML = currencyData[selectedCurrency].name;
         currencyImage.src = currencyData[selectedCurrency].img;
     }
-    
+
     convertValues();
 }
 
+// Função para alterar imagem da moeda de origem
 function changeOriginCurrency() {
     const currencyData = {
         real: { name: "Real Brasileiro", img: "./assets/brasil 2.png" },
@@ -99,12 +97,10 @@ function changeOriginCurrency() {
     };
 
     const selectedCurrency = currencySelectFirst.value;
-    
     if (currencyData[selectedCurrency]) {
-        currencyValueToConvert.innerHTML = currencyData[selectedCurrency].name;
         document.querySelector(".img-real").src = currencyData[selectedCurrency].img;
     }
-    
+
     convertValues();
 }
 

@@ -9,17 +9,33 @@
 }
 
 body {
-    
-    background: #065f5f;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+    animation: gradientAnim 5s ease infinite;
+    background-size: 400% 400%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 20px;;
+    padding: 20px;
+
 }
 
-.div-mother{
+@keyframes gradientAnim {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.div-mother {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,8 +44,7 @@ body {
     max-width: 600px;
     position: relative;
     top: 100px;
-    background: #065f5f;
-    ;
+
 }
 
 .logo-img {
@@ -40,50 +55,99 @@ body {
 main {
     width: 100%;
     max-width: 400px;
-    background: #e52121;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
-    border: 5px solid #131313;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
+    border: 2px solid #2c5364;
+    /* Azul roxo elegante (indigo) */
+    border-radius: 1rem;
+    padding: 2rem;
+    animation: glow 4s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+        0 0 40px rgba(0, 255, 255, 0.2),
+        0 0 60px rgba(0, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 20px;
+}
+
+
+@keyframes glow {
+    0% {
+        box-shadow:
+            0 0 20px rgba(0, 255, 255, 0.3),
+            0 0 40px rgba(0, 255, 255, 0.2),
+            0 0 60px rgba(0, 255, 255, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(0, 255, 255, 0.5),
+            0 0 60px rgba(0, 255, 255, 0.3),
+            0 0 90px rgba(0, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow:
+            0 0 20px rgba(0, 255, 255, 0.3),
+            0 0 40px rgba(0, 255, 255, 0.2),
+            0 0 60px rgba(0, 255, 255, 0.1);
+    }
 }
 
 label {
-    color: black;
     font-size: 14px;
-    font-weight: bold;
     display: block;
     margin-bottom: 5px;
     text-align: left;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #ffffffcc;
+    /* branco com transparência */
+    font-weight: 500;
 }
 
-select, input {
+select,
+input {
     width: 100%;
     border-radius: 10px;
-    background: white;
-    border: 1px solid black;
     height: 45px;
     margin-bottom: 20px;
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    appearance: none;
+    outline: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+    transition: all 0.3s ease;
 }
 
 button {
-    background: black;
     border-radius: 10px;
     width: 100%;
     border: none;
     height: 45px;
-    color: white;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+
 }
 
 button:hover {
-    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.7), 0 0 50px rgba(0, 242, 254, 0.3);
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
 }
 
 button:active {
@@ -91,7 +155,6 @@ button:active {
 }
 
 .result {
-    border: 1px solid black;
     border-radius: 15px;
     margin-top: 25px;
     padding: 15px;
@@ -114,13 +177,12 @@ button:active {
 }
 
 .currency {
-    color: black;
     font-size: 16px;
     font-weight: bold;
 }
 
-.currency-value-to-convert, .currency-value-converted {
-    color: #333;
+.currency-value-to-convert,
+.currency-value-converted {
     font-size: 18px;
     font-weight: bold;
 }
