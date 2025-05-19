@@ -44,7 +44,6 @@ body {
     max-width: 600px;
     position: relative;
     top: 100px;
-
 }
 
 .logo-img {
@@ -158,7 +157,7 @@ button:active {
     border-radius: 15px;
     margin-top: 25px;
     padding: 15px;
-    background-color: white;
+    background-color: rgba(0, 242, 254, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,9 +173,11 @@ button:active {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    color: black;
 }
 
 .currency {
+    color: black;
     font-size: 16px;
     font-weight: bold;
 }
@@ -185,4 +186,5 @@ button:active {
 .currency-value-converted {
     font-size: 18px;
     font-weight: bold;
+    color: #fd0000;
 }
